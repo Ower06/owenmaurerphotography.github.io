@@ -1,5 +1,8 @@
 [
-    {"name":"Huskies", "date":"9-19-26", "thumbnailSrc":"photos/huskies-26/main/1.jpg", "slug":"huskies-26"},
-    {"name":"Ballard", "date":"7-15-26", "thumbnailSrc":"photos/ballard-26/main/ballard_01.jpg", "slug":"ballard-26"},
-    {"name":"Monorail", "date":"5-8-26", "thumbnailSrc":"photos/monorail-26/main/monorail_06.jpg", "slug":"monorail-26"}
+    {"name":"Huskies", "date":"Sep 19, 2026", "thumbnailSrc":"photos/huskies-26/main/1.jpg", "slug":"huskies-26"},
+    {"name":"La Push", "date":"Aug 8-12, 2026", "thumbnailSrc":"photos/la push-26/main/la push_19.jpg", "slug":"la push-26"},
+    {"name":"Ballard", "date":"Jul 15, 2026", "thumbnailSrc":"photos/ballard-26/main/ballard_01.jpg", "slug":"ballard-26"},
+    {"name":"Ravenna Park", "date":"Jun 16, 2026", "thumbnailSrc":"photos/ravenna park-26/main/ravenna park_14.jpg", "slug":"ravenna park-26"},
+    {"name":"Deception Pass", "date":"Jun 17, 2026", "thumbnailSrc":"photos/deception pass-26/main/deception pass_10.jpg", "slug":"deception pass-26"},
+    {"name":"Monorail", "date":"May 8, 2026", "thumbnailSrc":"photos/monorail-26/main/monorail_06.jpg", "slug":"monorail-26"}
 ]
