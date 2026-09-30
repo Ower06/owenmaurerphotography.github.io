@@ -12,5 +12,6 @@
     {"name":"Seahawks Parade", "date":"Feb 11, 2026", "thumbnailSrc":"photos/seahawks-26/main/seahawks_10.jpg", "slug":"seahawks-26"},
     {"name":"Downtown", "date":"Dec 30, 2025", "thumbnailSrc":"photos/downtown-25/thumbnail.jpg", "slug":"downtown-25"},
     {"name":"Rainy Day", "date":"Dec 12, 2025", "thumbnailSrc":"photos/rainy day-25/main/rainy day_05.jpg", "slug":"rainy day-25"},
-    {"name":"Pike Place", "date":"Oct 18, 2025", "thumbnailSrc":"photos/pike place-25/main/pike place_02.jpg", "slug":"pike place-25"}
+    {"name":"Pike Place", "date":"Oct 18, 2025", "thumbnailSrc":"photos/pike place-25/main/pike place_02.jpg", "slug":"pike place-25"},
+    {"name":"Friday Harbor", "date":"Aug 10-17, 2025", "thumbnailSrc":"photos/friday harbor-25/main/friday-harbor_14.jpg", "slug":"pike place-25"}
 ]
