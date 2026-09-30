@@ -10,5 +10,6 @@
     {"name":"Downtown", "date":"Apr 5, 2026", "thumbnailSrc":"photos/downtown-26/main/downtown_05.jpg", "slug":"downtown-26"},
     {"name":"New Mexico", "date":"Mar 23-28, 2026", "thumbnailSrc":"photos/new mexico-26/main/new mexico_06.jpg", "slug":"new mexico-26"},
     {"name":"Seahawks Parade", "date":"Feb 11, 2026", "thumbnailSrc":"photos/seahawks-26/main/seahawks_10.jpg", "slug":"seahawks-26"},
-    {"name":"Downtown", "date":"Dec 30, 2025", "thumbnailSrc":"photos/downtown-25/thumbnail.jpg", "slug":"downtown-25"}
+    {"name":"Downtown", "date":"Dec 30, 2025", "thumbnailSrc":"photos/downtown-25/thumbnail.jpg", "slug":"downtown-25"},
+    {"name":"Rainy Day", "date":"Dec 12, 2025", "thumbnailSrc":"photos/rainy day-25/main/rainy day_05.jpg", "slug":"rainy day-25"},
 ]
