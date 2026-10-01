@@ -411,6 +411,9 @@ hr {
       height: 25px;
       width: 25px;
     }
+    p {
+      font-size: 6px;
+    }
     gap: 10px;
   }
 
