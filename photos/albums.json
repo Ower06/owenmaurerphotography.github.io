@@ -14,5 +14,6 @@
     {"name":"Rainy Day", "date":"Dec 12, 2025", "thumbnailSrc":"photos/rainy day-25/main/rainy day_05.jpg", "slug":"rainy day-25"},
     {"name":"Pike Place", "date":"Oct 18, 2025", "thumbnailSrc":"photos/pike place-25/main/pike place_02.jpg", "slug":"pike place-25"},
     {"name":"Friday Harbor", "date":"Aug 10-17, 2025", "thumbnailSrc":"photos/friday harbor-25/main/friday harbor_14.jpg", "slug":"friday harbor-25"},
-    {"name":"California", "date":"Apr 18, 2025", "thumbnailSrc":"photos/california-25/main/cali_05.jpg", "slug":"california-25"}
+    {"name":"California", "date":"Apr 18, 2025", "thumbnailSrc":"photos/california-25/main/cali_05.jpg", "slug":"california-25"},
+    {"name":"West Beach", "date":"May 10-11, 2025", "thumbnailSrc":"photos/west beach-25/main/west beach_03.jpg", "slug":"west beach-25"}
 ]
