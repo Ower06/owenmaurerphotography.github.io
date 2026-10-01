@@ -17,5 +17,6 @@
     {"name":"Italy", "date":"Jun 19-25, 2025", "thumbnailSrc":"photos/italy-25/main/italy_29.jpg", "slug":"italy-25"},
     {"name":"West Beach", "date":"May 10-11, 2025", "thumbnailSrc":"photos/west beach-25/main/west beach_03.jpg", "slug":"west beach-25"},
     {"name":"California", "date":"Apr 18, 2025", "thumbnailSrc":"photos/california-25/main/cali_05.jpg", "slug":"california-25"},
-    {"name":"Big White", "date":"Feb 16-22, 2025", "thumbnailSrc":"photos/big white-25/main/big white_02.jpg", "slug":"big white-25"}
+    {"name":"Big White", "date":"Feb 16-22, 2025", "thumbnailSrc":"photos/big white-25/main/big white_02.jpg", "slug":"big white-25"},
+    {"name":"Lake Chelan", "date":"Aug 11-14, 2024", "thumbnailSrc":"photos/lake chelan-24/main/lake chelan_03.jpg", "slug":"lake chelan-25"}
 ]
