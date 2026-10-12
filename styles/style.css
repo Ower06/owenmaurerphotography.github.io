@@ -242,6 +242,8 @@ hr {
   background-color: rgba(0,0,0,0.8);
   display: none;
   object-fit: contain;
+  touch-action: none;
+  overflow: hidden;
 }
 
 .overlay.active {
@@ -255,8 +257,9 @@ hr {
   max-width: 80vw;
   max-height: 80vh;
   object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
 }
-
 .photo-arrow {
   position: absolute;
   top: 50%;
