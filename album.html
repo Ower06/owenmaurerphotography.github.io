@@ -129,9 +129,10 @@
                 let panX = 0;
                 let panY = 0;
                 const MIN_SCALE = 1;
-                const MAX_SCALE = 5;
+                const MAX_SCALE = 4;
 
                 function applyTransform() {
+                    clampPan();
                     overlayImg.style.transform = `translate(${panX}px, ${panY}px) scale(${scale})`;
                 }
                 
@@ -186,24 +187,33 @@
                 let lastY = 0;
 
                 overlayImg.addEventListener("pointerdown", (event) => {
+                    event.preventDefault();
                     if (scale > 1) {
                         dragging = true;
                         lastX = event.clientX;
                         lastY = event.clientY;
                     }
-                });
+                }, { passive: false });
 
                 overlayImg.addEventListener("pointermove", (event) => {
-                    if (!dragging || pinching) return;
+                    if (!dragging || pinching) return;                   
                     panX += event.clientX - lastX;
                     panY += event.clientY - lastY;
                     lastX = event.clientX;
                     lastY = event.clientY;
                     applyTransform();
-                })
+                });
 
                 window.addEventListener("pointerup", () => {dragging = false; });
 
+                function clampPan() {
+                    const maxX = Math.max(0, (overlayImg.offsetWidth * scale - overlayE1.clientWidth) / 2);
+                    const maxY = Math.max(0, (overlayImg.offsetHeight * scale - overlayE1.clientHeight) / 2);
+
+                    panX = Math.min(maxX, Math.max(-maxX, panX));
+                    panY = Math.min(maxY, Math.max(-maxY, panY));
+                
+                }
                 loadAlbumInfo();
                 loadPhotos();
             </script>
