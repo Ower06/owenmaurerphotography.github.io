@@ -196,13 +196,14 @@
                 }, { passive: false });
 
                 overlayImg.addEventListener("pointermove", (event) => {
-                    if (!dragging || pinching) return;                   
+                    if (!dragging || pinching) return;
+                    event.preventDefault();
                     panX += event.clientX - lastX;
                     panY += event.clientY - lastY;
                     lastX = event.clientX;
                     lastY = event.clientY;
                     applyTransform();
-                });
+                }, { passive: false });
 
                 window.addEventListener("pointerup", () => {dragging = false; });
 
