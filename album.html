@@ -69,6 +69,7 @@
                         const img = document.createElement("img");
                         img.src = photo.src;
                         img.addEventListener("click", () => {
+                            setScale(1);
                             document.getElementById("overlay").classList.add("active");
                             document.getElementById("overlay-img").src = img.src;
                             currentIndex = i;
@@ -81,7 +82,14 @@
                     })
                 }
 
+                document.getElementById("overlay").addEventListener("click", (event) => {
+                    if (event.target === event.currentTarget) {
+                        exit();
+                    }
+                });
+
                 async function changePhoto(direction) {
+                    setScale(1);
                     if (direction > 0 && currentIndex < photos.length - 1) {
                         document.getElementById("overlay-img").src = photos[currentIndex + 1].querySelector("img").src;
                         currentIndex += 1;
@@ -92,14 +100,9 @@
                     updateArrows();
                 }
 
-                document.getElementById("overlay").addEventListener("click", (event) => {
-                    if (event.target === event.currentTarget) {
-                        exit();
-                    }
-                });
-
                 async function exit() {
                     document.getElementById("overlay").classList.remove("active");
+                    setScale(1);
                 }
 
                 async function updateArrows() {
@@ -114,7 +117,92 @@
                     } else {
                         document.getElementById("photo-arrow-next").classList.remove("hidden");
                     }
+
                 }
+
+                // ZOOM CONTROLS FOR INDIVIDUAL IMAGES
+
+                const overlayE1 = document.getElementById("overlay");
+                const overlayImg = document.getElementById("overlay-img");
+
+                let scale = 1;
+                let panX = 0;
+                let panY = 0;
+                const MIN_SCALE = 1;
+                const MAX_SCALE = 5;
+
+                function applyTransform() {
+                    overlayImg.style.transform = `translate(${panX}px, ${panY}px) scale(${scale})`;
+                }
+                
+                function setScale(newScale) {
+                    scale = Math.min(MAX_SCALE, Math.max(MIN_SCALE, newScale));
+                    if (scale === 1) { panX = 0; panY = 0; }
+                    applyTransform();
+                }
+
+                overlayE1.addEventListener("wheel", (event) => {
+                    event.preventDefault();
+                    setScale(scale * (event.deltaY < 0 ? 1.1 : 0.9));
+                }, { passive: false });
+
+                let startDistance = 0;
+                let startScale = 1;
+                let pinching = false;
+
+                function touchDistance(touches) {
+                    return Math.hypot(
+                        touches[0].clientX - touches[1].clientX,
+                        touches[0].clientY - touches[1].clientY,
+                    );
+                }
+
+                overlayE1.addEventListener("touchstart", (event) => {
+                    if (event.touches.length === 2) {
+                        pinching = true;
+                        startDistance = touchDistance(event.touches);
+                        startScale = scale;
+                    }
+                });
+
+                overlayE1.addEventListener("touchmove", (event) => {
+                    if (event.touches.length === 2) {
+                        event.preventDefault();
+                        setScale(startScale * touchDistance(event.touches) / startDistance);
+                    }
+                }, { passive: false });
+
+                overlayE1.addEventListener("touchend", (event) => {
+                    if (event.touches.length < 2) {
+                        pinching = false;
+                        dragging = false;
+                    }
+                });
+
+                //  PANNING CONTROLS FOR INDIVIDUAL IMAGES
+
+                let dragging = false;
+                let lastX = 0;
+                let lastY = 0;
+
+                overlayImg.addEventListener("pointerdown", (event) => {
+                    if (scale > 1) {
+                        dragging = true;
+                        lastX = event.clientX;
+                        lastY = event.clientY;
+                    }
+                });
+
+                overlayImg.addEventListener("pointermove", (event) => {
+                    if (!dragging || pinching) return;
+                    panX += event.clientX - lastX;
+                    panY += event.clientY - lastY;
+                    lastX = event.clientX;
+                    lastY = event.clientY;
+                    applyTransform();
+                })
+
+                window.addEventListener("pointerup", () => {dragging = false; });
 
                 loadAlbumInfo();
                 loadPhotos();
