@@ -100,7 +100,7 @@
 
             <div class="section-title" >
                 <h2>Albums:</h2>
-                <a class="underline-link" style="font-size: 2rem; display: flex; margin-left: auto" href="gallery.html">See all</a>
+                <a class="underline-link" style="font-size: 2rem; display: flex; margin-left: auto" href="gallery">See all</a>
             </div>
             <div id="album-grid" class="album-grid"></div>
             <script>
@@ -117,7 +117,7 @@
                         const album = data[i];
                         const currAlbum = document.createElement("a");
                         currAlbum.className = "album";
-                        currAlbum.href = "album.html?album=" + album.slug;
+                        currAlbum.href = "album?album=" + album.slug;
 
                         const img = document.createElement("img");
                         img.src = album.thumbnailSrc;
