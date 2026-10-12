@@ -92,6 +92,12 @@
                     updateArrows();
                 }
 
+                document.getElementById("overlay").addEventListener("click", (event) => {
+                    if (event.target === event.currentTarget) {
+                        exit();
+                    }
+                });
+
                 async function exit() {
                     document.getElementById("overlay").classList.remove("active");
                 }
