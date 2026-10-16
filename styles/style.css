@@ -419,6 +419,9 @@ hr {
   }
 
   .contact-link {
+    p {
+      font-size: 15px;
+    }
     img {
       height: 25px;
       width: 25px;
